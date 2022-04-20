@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+.container{
+    display: flex;
+    width: 90vw;
+}
+.item{
+    background-color: cover;
+    background-repeat: no-repeat; /* ภาพเกินมีการทำซ้ำจะใช้คำสั่งนี้ */
+    background-position: center;
+    height: 68vh;
+    border-radius: 50px;
+    cursor: pointer;
+    color: whitesmoke;
+    margin: 10px;
+    position: relative;
+    flex: 0.2;
+    transition: flex 0.7s ease-in;
+    opacity: 0.7;
+}
+.item.active{
+    flex:5;
+    opacity: 1;
+}
+.item.active h3{
+    opacity: 1;
+}
+.item h3 {
+    font-size: 24px;
+    position:absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    background-color: gray;
+}
+
+@media(max-width:500px){
+    .container{
+        width: 100vw;
+    }
+    .item:nth-of-type(6),.item:nth-of-type(7){
+        display: none;
+    }
+}
